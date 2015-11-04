@@ -1,0 +1,23 @@
+{
+  "name": "graphql-mendeley",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --harmony_rest_parameters --harmony_destructuring lib",
+    "dev": "nodemon --harmony_rest_parameters --harmony_destructuring lib"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "graphql": "^0.4.12",
+    "superagent": "^1.4.0",
+    "superagent-promise": "^1.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.8.1"
+  }
+}
