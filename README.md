@@ -88,3 +88,19 @@ Get Members of this group, their role and their profile (name and id)
     }
 }
 ```
+
+Add some limits to the fetch
+
+```
+{
+    group(id:"e3630413-abd9-3308-8937-c5f119c17a28") {
+        name,
+        members(limit: 5) {
+            role,
+            profile {
+                name, id
+            }
+        }
+    }
+}
+```
