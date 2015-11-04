@@ -72,3 +72,19 @@ Get some informations about its owner
 // requesting https://api.mendeley.com:443/groups/e3630413-abd9-3308-8937-c5f119c17a28
 // requesting https://api.mendeley.com:443/profiles/69df88dc-f4fd-3faf-82d2-353363aa7138
 ```
+
+Get Members of this group, their role and their profile (name and id)
+
+```
+{
+    group(id:"e3630413-abd9-3308-8937-c5f119c17a28") {
+        name,
+        members {
+            role,
+            profile {
+                name, id
+            }
+        }
+    }
+}
+```
