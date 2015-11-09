@@ -15,7 +15,7 @@ curl -XPOST -H "Content-Type:application/graphql"  -d '{
         id,
         name,
       },
-      members {
+      members(limit: 3) {
         id,
         role,
         profile {
