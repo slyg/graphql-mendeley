@@ -5,6 +5,8 @@ curl -XPOST -H "Content-Type:application/graphql" -d '{
       title
     }
 }' http://localhost:3000/graphql
+sleep 1
+
 
 echo '\n\nGet members of a group\n'
 curl -XPOST -H "Content-Type:application/graphql" -d '{
@@ -24,6 +26,7 @@ curl -XPOST -H "Content-Type:application/graphql" -d '{
       },
     }
 }' http://localhost:3000/graphql
+sleep 1
 
 echo '\n\nRoot Introspection\n'
 curl -XPOST -H "Content-Type:application/graphql" -d '{
@@ -39,6 +42,18 @@ curl -XPOST -H "Content-Type:application/graphql" -d '{
         }
     }
 }' http://localhost:3000/graphql
+sleep 1
+
+echo '\n\nGet profile from academi statuses\n'
+curl -XPOST -H "Content-Type:application/graphql" -d '{
+    academicStatuses{
+      description,
+      profiles(limit: 1) {
+        name,
+      }
+    }
+}' http://localhost:3000/graphql
+sleep 1
 
 echo '\n\nIntrospection on ProfileType\n'
 curl -XPOST -H "Content-Type:application/graphql" -d '{
@@ -52,6 +67,7 @@ curl -XPOST -H "Content-Type:application/graphql" -d '{
       }
     }
 }' http://localhost:3000/graphql
+sleep 1
 
 echo '\n\nIntrospection on GroupType\n'
 curl -XPOST -H "Content-Type:application/graphql" -d '{
