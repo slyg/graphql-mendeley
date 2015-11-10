@@ -1,12 +1,11 @@
 echo '\n\nGet profile\n'
 curl -XPOST -H "Content-Type:application/graphql" -d '{
-    profile(id: "1c3ac854-1c3c-3202-9753-93b69dd1566f") {
+    profile(id: "84dfd8f8-cd91-33d9-8eda-c407f2b72f73") {
       name,
-      title
+      title,
     }
 }' http://localhost:3000/graphql
 sleep 1
-
 
 echo '\n\nGet members of a group\n'
 curl -XPOST -H "Content-Type:application/graphql" -d '{
