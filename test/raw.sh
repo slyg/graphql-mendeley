@@ -44,12 +44,13 @@ curl -XPOST -H "Content-Type:application/graphql" -d '{
 }' http://localhost:3000/graphql
 sleep 1
 
-echo '\n\nGet profile from academi statuses\n'
+echo '\n\nGet profile from academic statuses\n'
 curl -XPOST -H "Content-Type:application/graphql" -d '{
-    academicStatuses{
+    academicStatuses {
       description,
       profiles(limit: 1) {
         name,
+        link,
       }
     }
 }' http://localhost:3000/graphql
