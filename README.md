@@ -1,21 +1,31 @@
-## Facebook's GraphQL implementation on top of Mendeley's API
+## GraphQL implementation on top of Mendeley's REST api
+
+NB: This is just a sandbox app
 
 ### Prerequisites
 
-- `nodejs > 4.0` and `npm`
-- Linux/OSX system (Haven't tested on Windows).
+`nodejs > 4.0` and `npm`
 
 ### Installation
 
-```$ npm i```
+```shell
+$ npm i
+```
 
 ### Configuration
 
-Add a valid token in the `config.json` file
+Add a valid token in a `config.json` file, e.g.:
+```json
+{
+  "ACCESS_TOKEN": "SDaSD6VSDfFVgg3FV4SsD5gFV2S6VSDfFVgD3FV4sD5gFV2SD3SsD5gFV"
+}
+```
 
 ### Start server
 
-```$ npm start```
+```shell
+$ npm start
+```
 
 NB: To start server with live reload: `$ npm run dev`
 
@@ -23,16 +33,13 @@ This will setup a GraphQL endpoint at `http://localhost:3000/graphql`
 
 ### Play with it
 
-Request spec:
-
-- Method `POST`
-- Headers `Content-Type: application/graphql`
+Use your browser on `http://localhost:3000/graphql` to access a graph*i*ql GUI.
 
 #### Query on a group
 
 Get the name
 
-```
+```graphql
 {
     group(id:"e3630413-abd9-3308-8937-c5f119c17a28") {
         name
@@ -44,7 +51,7 @@ Get the name
 
 Get a little bit more informations
 
-```
+```graphql
 {
     group(id:"e3630413-abd9-3308-8937-c5f119c17a28") {
         name,
@@ -59,7 +66,7 @@ Get a little bit more informations
 
 Get some informations about its owner
 
-```
+```graphql
 {
     group(id:"e3630413-abd9-3308-8937-c5f119c17a28") {
         name,
@@ -75,7 +82,7 @@ Get some informations about its owner
 
 Get Members of this group, their role and their profile (name and id)
 
-```
+```graphql
 {
     group(id:"e3630413-abd9-3308-8937-c5f119c17a28") {
         name,
@@ -91,7 +98,7 @@ Get Members of this group, their role and their profile (name and id)
 
 Add some limits to the fetch
 
-```
+```graphql
 {
     group(id:"e3630413-abd9-3308-8937-c5f119c17a28") {
         name,
